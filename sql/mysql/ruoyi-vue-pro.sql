@@ -2320,6 +2320,8 @@ INSERT INTO `system_menu` (`id`, `name`, `permission`, `type`, `sort`, `parent_i
 INSERT INTO `system_menu` (`id`, `name`, `permission`, `type`, `sort`, `parent_id`, `path`, `icon`, `component`, `component_name`, `status`, `visible`, `keep_alive`, `always_show`, `creator`, `create_time`, `updater`, `update_time`, `deleted`) VALUES (2757, '会员经验记录查询', 'member:experience-record:query', 3, 11, 2325, '', '', '', '', 0, b'1', b'1', b'1', '1', '2024-04-24 20:02:51', '1', '2024-04-24 20:02:51', b'0');
 COMMIT;
 
+ALTER TABLE `system_menu`
+    ADD COLUMN `query` VARCHAR(200) COMMENT '路由参数' NOT NULL DEFAULT '' AFTER `path`;
 -- ----------------------------
 -- Table structure for system_notice
 -- ----------------------------
